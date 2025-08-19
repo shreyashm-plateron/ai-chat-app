@@ -1,0 +1,16 @@
+.aiChatbotSmallPrompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.aiChatbotSmallPrompt:hover {
+  transform: scale(1.05);
+}
+
+.animationBox {
+  width: 100%;
+  height: 100%;
+}

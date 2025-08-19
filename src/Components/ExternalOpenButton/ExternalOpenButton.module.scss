@@ -1,0 +1,57 @@
+@import '@/Styles/Variables/Settings.colors.scss';
+@import '@/Styles/Variables/Settings.typo.scss';
+@import '@/Styles/Variables/Settings.box.scss';
+
+.externalOpenButton {
+  display: flex;
+  align-items: center;
+  gap: $spacing-1halfx;
+  height: 35px;
+  width: 35px;
+  background-color: $midnight-black-700;
+  border: 1px solid $border-primary;
+  border-radius: 10px;
+  box-shadow:
+    2px 2px 0px 0px $universal-white40 inset,
+    -1px -1px 0px 0px $universal-black40 inset;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  justify-content: center;
+
+  &.hovered {
+    width: fit-content;
+    padding: 0 $spacing-2halfx;
+  }
+}
+
+.externalOpenButtonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.externalOpenButtonText {
+  font-size: $type-size-2xs;
+  font-weight: $font-weight-regular;
+  line-height: $type-line-height-2xs;
+  color: $universal-white;
+  white-space: nowrap;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+
+  .hovered & {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

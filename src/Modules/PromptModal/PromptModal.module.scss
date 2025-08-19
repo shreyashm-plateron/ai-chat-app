@@ -1,0 +1,220 @@
+@import '../../Styles/Variables/Settings.colors.scss';
+@import '../../Styles/Variables/Settings.typo.scss';
+@import '../../Styles/Variables/Settings.box.scss';
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000040;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  font-family: Inter;
+  background: linear-gradient(
+    104.15deg,
+    rgba(255, 255, 255, 0.75) -16.41%,
+    rgba(248, 248, 251, 0.75) 35.87%,
+    rgba(255, 255, 255, 0.75) 121.27%
+  );
+  border: 2px solid $universal-white;
+  box-sizing: border-box;
+  border-radius: $border-radius-extra-soft;
+  padding: 0 $spacing-6x $spacing-6x $spacing-6x;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  height: 772px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 11;
+}
+
+.modal-buttons {
+  position: absolute;
+  top: $spacing-6x;
+  right: $spacing-6x;
+  display: flex;
+  gap: $spacing-4x;
+  z-index: 15;
+}
+
+.modal-bg-image {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  width: calc(100% + 4px);
+  height: 357px;
+  overflow: hidden;
+  border-radius: 32px 32px 0 0;
+  z-index: 12;
+}
+
+.bg-filler-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-content-assist-you-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+  z-index: 14;
+}
+
+.modal-content-assist-you {
+  width: 210px;
+  height: 210px;
+  margin-top: 50px;
+  overflow: visible;
+  position: relative;
+}
+
+.modal-content-good-afternoon {
+  width: fit-content;
+  max-width: 526px;
+  z-index: 16;
+  font-weight: $font-weight-regular;
+  font-size: $type-size-4xl;
+  line-height: $type-line-height-4xl;
+  color: $alias-type-secondary;
+  text-align: center;
+  margin-bottom: 6px;
+  margin-top: -20px;
+  position: relative;
+}
+
+.modal-content-how-can-i-assist-you {
+  width: fit-content;
+  max-width: 526px;
+  font-weight: $font-weight-regular;
+  font-size: $type-size-4xl;
+  line-height: $type-line-height-4xl;
+  color: $alias-type-secondary;
+  z-index: 16;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content-how-can-i-assist-you-span {
+  background: linear-gradient(161.26deg, #2a4fd6 53.14%, #ffffff 129.65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.eg-prompt-card-container-row {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-6x;
+  position: relative;
+}
+
+.submitted-prompts-container {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-end;
+  flex-shrink: 0;
+  margin-bottom: $spacing-4x;
+  position: relative;
+}
+
+.conversation-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: auto;
+  margin: $spacing-4x 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relative;
+}
+
+.conversation-container::-webkit-scrollbar {
+  display: none;
+}
+
+.generating-response-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: $spacing-4x;
+  margin-bottom: $spacing-4x;
+  position: relative;
+  z-index: 21;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.ellipse-background {
+  position: absolute;
+  margin-top: -30px;
+  left: 98px;
+  width: 604px;
+  height: 273px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.ellipse-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+}
+
+.ellipse5-background {
+  position: absolute;
+  margin-top: 50px;
+  left: 239px;
+  width: 231px;
+  height: 109px;
+  z-index: 21;
+  pointer-events: none;
+}
+
+.ellipse5-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+}
+
+.prompt-area-box {
+  width: 100%;
+  position: relative;
+  z-index: 22;
+}
+
+.footer-container-text {
+  font-size: $type-size-2xs;
+  color: $alias-type-placeholder;
+  text-align: center;
+  font-weight: $font-weight-regular;
+  line-height: $type-line-height-2xs;
+  position: relative;
+  z-index: 19;
+}

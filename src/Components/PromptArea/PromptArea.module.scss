@@ -1,0 +1,160 @@
+@import '../../Styles/Variables/Settings.colors.scss';
+@import '../../Styles/Variables/Settings.typo.scss';
+@import '../../Styles/Variables/Settings.box.scss';
+
+.promptAreaBox {
+  width: 752px;
+  min-height: 96px;
+  box-sizing: border-box;
+  background-color: $universal-white;
+  border-radius: $border-radius-soft;
+  position: relative;
+  gap: $spacing-3x;
+
+  // Outer gradient border using pseudo-element
+  &::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 30px; // 24px + 6px to account for the border width
+    background: linear-gradient(
+      91.38deg,
+      rgba(47, 88, 238, 0.1) -1.26%,
+      rgba(255, 255, 255, 0) 100.23%
+    );
+    z-index: -1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px; // Account for the new outer border
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-radius: $border-radius-soft; // Adjusted for the new border
+    padding: 1px;
+    background: linear-gradient(
+      89.12deg,
+      #2647be9a -0.29%,
+      rgba(255, 255, 255, 0) 127.12%
+    );
+    mask:
+      linear-gradient($universal-white 0 0) content-box,
+      linear-gradient($universal-white 0 0);
+    mask-composite: exclude;
+    -webkit-mask:
+      linear-gradient($universal-white 0 0) content-box,
+      linear-gradient($universal-white 0 0);
+    -webkit-mask-composite: xor;
+  }
+}
+
+.inputRow {
+  display: flex;
+  flex-direction: row;
+  padding: $spacing-4x $spacing-4x $spacing-6x $spacing-4x;
+  gap: $spacing-3x;
+}
+
+.inputRowIcon {
+  width: 24px;
+}
+
+.inputRowText {
+  width: 100%;
+}
+
+.contentEditable {
+  width: 688px;
+  min-height: 24px;
+  max-height: 250px;
+  height: 24px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  font-size: $type-size-xs;
+  line-height: 1.5;
+  background: transparent;
+  overflow: visible;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  display: block;
+  position: relative;
+  z-index: 1;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  transition:
+    height 0.2s ease,
+    overflow 0.2s ease;
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  // Custom placeholder
+  &:empty:before {
+    content: attr(data-placeholder);
+    color: $alias-type-placeholder;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  // Focus styles
+  &:focus {
+    outline: none;
+  }
+
+  // Ensure consistent height behavior
+  &:empty {
+    height: 24px;
+  }
+
+  // Prevent height expansion for single line content
+  &:not(:empty) {
+    height: auto;
+    min-height: 24px;
+  }
+}
+
+// Ellipsis indicator styles
+.ellipsisIndicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(90deg, transparent 0%, $universal-white 30%);
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ellipsisText {
+  font-size: 18px;
+  font-weight: bold;
+  color: $alias-type-placeholder;
+  line-height: 1;
+}
+
+.ellipsisHint {
+  font-size: 10px;
+  color: $alias-type-placeholder;
+  font-style: italic;
+  line-height: 1;
+}
+
+.promptAreaFooter {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-3x;
+  padding: 0px $spacing-3x $spacing-3x 0px;
+  justify-content: flex-end;
+}

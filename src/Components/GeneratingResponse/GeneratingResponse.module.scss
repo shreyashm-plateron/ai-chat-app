@@ -1,0 +1,13 @@
+@import '@/Styles/Variables/Settings.colors.scss';
+@import '@/Styles/Variables/Settings.box.scss';
+
+.generatingResponse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animationContainer {
+  width: 306px;
+  height: 62px;
+}

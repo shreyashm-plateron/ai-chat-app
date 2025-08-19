@@ -1,0 +1,51 @@
+@import '@/Styles/Variables/Settings.colors.scss';
+@import '@/Styles/Variables/Settings.typo.scss';
+@import '@/Styles/Variables/Settings.box.scss';
+
+.pageSizeButton {
+  width: 40px;
+  height: 40px;
+  border-radius: $border-radius-full;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: $border-radius-full;
+    padding: 1px;
+    background: linear-gradient(
+      134.28deg,
+      $background-primary -14.87%,
+      $morning-fog-850 55.08%,
+      $background-primary 134.52%
+    );
+    mask:
+      linear-gradient($universal-white 0 0) content-box,
+      linear-gradient($universal-white 0 0);
+    mask-composite: exclude;
+    -webkit-mask:
+      linear-gradient($universal-white 0 0) content-box,
+      linear-gradient($universal-white 0 0);
+    -webkit-mask-composite: xor;
+  }
+}
+
+.pageSizeButtonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

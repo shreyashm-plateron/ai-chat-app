@@ -1,0 +1,82 @@
+@import '@/Styles/Variables/Settings.colors.scss';
+@import '@/Styles/Variables/Settings.typo.scss';
+@import '@/Styles/Variables/Settings.box.scss';
+
+.threeDotButton {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background-color: $universal-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow:
+    1px 1px 2px 0px #1212141f inset,
+    -2px -2px 4px 0px $universal-white inset,
+    1px 1px 4px 0px #1212141f,
+    -2px -2px 4px 0px $universal-white;
+}
+
+.threeDotButtonIcon {
+  height: $icon-size-16;
+  width: $icon-size-16;
+}
+
+.container {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 13px;
+  margin-top: $spacing-2x;
+  background: linear-gradient(
+    104.15deg,
+    $universal-white -16.41%,
+    $morning-fog-900 35.87%,
+    $universal-white 121.27%
+  );
+  border-radius: $border-radius-l;
+  border: 3px solid $universal-white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  width: 194px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2x;
+  padding: $spacing-3x 0px;
+  cursor: pointer;
+  font-family: Inter;
+  font-size: $type-size-xs;
+  font-weight: $font-weight-regular;
+  line-height: $type-line-height-xs;
+  letter-spacing: 0%;
+  transition: background-color 0.2s ease;
+  color: $alias-type-primary;
+
+  &:first-child {
+    padding-top: 0px;
+  }
+
+  &:last-child {
+    padding-bottom: 0px;
+  }
+}
+
+.dropdownIcon {
+  height: $icon-size-16;
+  width: $icon-size-16;
+  color: $icon-secondary;
+}
+
+.divider {
+  height: 1px;
+  border-top: 1px dashed $morning-fog-700;
+}

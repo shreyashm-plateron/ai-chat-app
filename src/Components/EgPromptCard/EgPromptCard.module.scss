@@ -1,0 +1,41 @@
+@import '@/Styles/Variables/Settings.colors.scss';
+@import '@/Styles/Variables/Settings.typo.scss';
+@import '@/Styles/Variables/Settings.box.scss';
+
+.egPromptCard {
+  box-sizing: border-box;
+  background-color: $morning-fog-850;
+  border-radius: $border-radius-l;
+  width: 234px;
+  height: 196px;
+  padding: $spacing-4x;
+  box-shadow:
+    1px 1px 2px 0px #12121414,
+    1px 1px 2px 0px $universal-white inset;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.egPromptCardContent {
+  font-size: $type-size-s;
+  font-weight: $font-weight-regular;
+  line-height: $type-line-height-s;
+  color: $alias-type-primary;
+}
+
+.egPromptCardFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.egPromptCardFooterButton {
+  background-color: $universal-white;
+  border-radius: $border-radius-full;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

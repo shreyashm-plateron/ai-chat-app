@@ -1,0 +1,24 @@
+@import '@/Styles/Variables/Settings.colors.scss';
+@import '@/Styles/Variables/Settings.typo.scss';
+@import '@/Styles/Variables/Settings.box.scss';
+
+.searchButton {
+  height: 36px;
+  width: 36px;
+  background-color: $universal-white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow:
+    1px 1px 2px 0px #1212141f inset,
+    -2px -2px 4px 0px $universal-white inset,
+    1px 1px 4px 0px #1212141f,
+    -2px -2px 4px 0px $universal-white;
+}
+
+.searchButtonIcon {
+  height: $icon-size-14;
+  width: $icon-size-14;
+}
