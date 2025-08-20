@@ -2,17 +2,11 @@ import styles from './PromptedText.module.scss';
 
 interface PromptedTextProps {
   text: string;
-  error?: boolean;
 }
 
-export default function PromptedText({
-  text,
-  error = false,
-}: PromptedTextProps) {
+export default function PromptedText({ text }: PromptedTextProps) {
   return (
-    <div
-      className={`${styles.promptedTextContainer} ${error ? styles.error : ''}`}
-    >
+    <div className={styles.promptedTextContainer}>
       <div className={styles.promptedTextContent}>{text}</div>
     </div>
   );

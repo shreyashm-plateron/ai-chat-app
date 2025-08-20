@@ -19,8 +19,6 @@ export default function PromptArea({
   isLoading = false,
 }: PromptAreaProps) {
   const [inputValue, setInputValue] = useState(value);
-  const [showEllipsis, setShowEllipsis] = useState(false);
-  const [isOverflowing, setIsOverflowing] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const handleInput = () => {
@@ -29,55 +27,25 @@ export default function PromptArea({
       setInputValue(newValue);
       onChange?.(newValue);
 
-      // Only adjust height if we haven't reached the maximum
-      if (!isOverflowing) {
-        adjustHeight();
-      }
+      // Adjust height based on content
+      adjustHeight();
     }
   };
 
   const adjustHeight = () => {
     if (contentRef.current) {
+      // Reset height to auto to get natural height
+      contentRef.current.style.height = 'auto';
+
       // Get the scroll height
       const scrollHeight = contentRef.current.scrollHeight;
-      const maxHeight = 250; // Fixed height in pixels
 
-      // Check if content is overflowing
-      if (scrollHeight > maxHeight) {
-        setIsOverflowing(true);
-        // Force the height to maxHeight and make it scrollable
-        contentRef.current.style.height = maxHeight + 'px';
-        contentRef.current.style.maxHeight = maxHeight + 'px';
-        contentRef.current.style.overflow = 'auto';
-        contentRef.current.style.resize = 'none';
-
-        // Show ellipsis after a short delay for better UX
-        setTimeout(() => setShowEllipsis(true), 200);
+      // Only increase height when content actually needs more than 24px
+      if (scrollHeight <= 24) {
+        contentRef.current.style.height = '24px';
       } else {
-        setIsOverflowing(false);
-        setShowEllipsis(false);
-
-        // Set height based on content, but with minimum
-        if (scrollHeight <= 24) {
-          contentRef.current.style.height = '24px';
-          contentRef.current.style.maxHeight = '24px';
-        } else {
-          contentRef.current.style.height = scrollHeight + 'px';
-          contentRef.current.style.maxHeight = scrollHeight + 'px';
-        }
-        contentRef.current.style.overflow = 'visible';
-        contentRef.current.style.resize = 'none';
+        contentRef.current.style.height = scrollHeight + 'px';
       }
-    }
-  };
-
-  const resetHeight = () => {
-    if (contentRef.current) {
-      setIsOverflowing(false);
-      setShowEllipsis(false);
-      contentRef.current.style.height = '24px';
-      contentRef.current.style.maxHeight = '24px';
-      contentRef.current.style.overflow = 'visible';
     }
   };
 
@@ -105,10 +73,9 @@ export default function PromptArea({
     if (inputValue.trim()) {
       onSubmit?.(inputValue.trim());
       setInputValue('');
-      resetHeight();
-
       if (contentRef.current) {
         contentRef.current.innerText = '';
+        adjustHeight();
       }
     }
   };
@@ -123,18 +90,10 @@ export default function PromptArea({
     }
   }, [value]);
 
-  // Reset height when inputValue becomes empty
-  useEffect(() => {
-    if (!inputValue.trim()) {
-      resetHeight();
-    }
-  }, [inputValue]);
-
   // Set initial height on mount
   useEffect(() => {
     if (contentRef.current) {
       contentRef.current.style.height = '24px';
-      contentRef.current.style.maxHeight = '250px';
     }
   }, []);
 
@@ -156,12 +115,6 @@ export default function PromptArea({
             suppressContentEditableWarning={true}
             data-placeholder="Enter your prompt here"
           />
-          {/* {showEllipsis && isOverflowing && ( */}
-          {/* <div className={styles.ellipsisIndicator}> */}
-          {/* <span className={styles.ellipsisText}>📜</span> */}
-          {/* <span className={styles.ellipsisHint}>Scroll to see more</span> */}
-          {/* </div> */}
-          {/* )} */}
         </div>
       </div>
       <div className={styles.promptAreaFooter}>

@@ -6,7 +6,6 @@ export { default as CrossPaddedIcon } from './CrossPadded';
 export { default as DeleteIcon } from './Delete';
 export { default as DirectionArrowUp } from './DirectionArrowUp';
 export { default as EditIcon } from './Edit';
-export { default as ExpandIcon } from './Expand';
 export { default as ExternalOpen } from './ExternalOpen';
 export { default as HoriThreeDotsIcon } from './HoriThreeDots';
 export { default as PromptRunning } from './PromptRunning';

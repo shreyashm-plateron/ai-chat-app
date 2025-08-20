@@ -1,7 +1,3 @@
-@import '../../Styles/Variables/Settings.colors.scss';
-@import '../../Styles/Variables/Settings.typo.scss';
-@import '../../Styles/Variables/Settings.box.scss';
-
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -23,10 +19,10 @@
     rgba(248, 248, 251, 0.75) 35.87%,
     rgba(255, 255, 255, 0.75) 121.27%
   );
-  border: 2px solid $universal-white;
+  border: 2px solid #ffffff;
   box-sizing: border-box;
-  border-radius: $border-radius-extra-soft;
-  padding: 0 $spacing-6x $spacing-6x $spacing-6x;
+  border-radius: 32px;
+  padding: 0 24px 24px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,11 +35,11 @@
 
 .modal-buttons {
   position: absolute;
-  top: $spacing-6x;
-  right: $spacing-6x;
+  top: 24px;
+  right: 24px;
   display: flex;
-  gap: $spacing-4x;
-  z-index: 15;
+  gap: 16px;
+  z-index: 1015;
 }
 
 .modal-bg-image {
@@ -86,10 +82,10 @@
   width: fit-content;
   max-width: 526px;
   z-index: 16;
-  font-weight: $font-weight-regular;
-  font-size: $type-size-4xl;
-  line-height: $type-line-height-4xl;
-  color: $alias-type-secondary;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 48px;
+  color: #5d5d5e;
   text-align: center;
   margin-bottom: 6px;
   margin-top: -20px;
@@ -99,10 +95,11 @@
 .modal-content-how-can-i-assist-you {
   width: fit-content;
   max-width: 526px;
-  font-weight: $font-weight-regular;
-  font-size: $type-size-4xl;
-  line-height: $type-line-height-4xl;
-  color: $alias-type-secondary;
+
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 48px;
+  color: #5d5d5e;
   z-index: 16;
   text-align: center;
   position: relative;
@@ -118,7 +115,7 @@
   margin-top: 40px;
   display: flex;
   flex-direction: row;
-  gap: $spacing-6x;
+  gap: 24px;
   position: relative;
 }
 
@@ -129,7 +126,7 @@
   width: 100%;
   align-items: flex-end;
   flex-shrink: 0;
-  margin-bottom: $spacing-4x;
+  margin-bottom: 16px;
   position: relative;
 }
 
@@ -139,7 +136,7 @@
   flex-direction: column;
   width: 100%;
   overflow-y: auto;
-  margin: $spacing-4x 0;
+  margin: 16px 0;
   scrollbar-width: none;
   -ms-overflow-style: none;
   position: relative;
@@ -153,8 +150,8 @@
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  margin-top: $spacing-4x;
-  margin-bottom: $spacing-4x;
+  margin-top: 16px;
+  margin-bottom: 16px;
   position: relative;
   z-index: 21;
 }
@@ -210,11 +207,11 @@
 }
 
 .footer-container-text {
-  font-size: $type-size-2xs;
-  color: $alias-type-placeholder;
+  font-size: 12px;
+  color: #8b8b8c;
   text-align: center;
-  font-weight: $font-weight-regular;
-  line-height: $type-line-height-2xs;
+  font-weight: 400;
+  line-height: 16px;
   position: relative;
   z-index: 19;
 }

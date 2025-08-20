@@ -1,7 +1,3 @@
-@import '../../Styles/Variables/Settings.colors.scss';
-@import '../../Styles/Variables/Settings.typo.scss';
-@import '../../Styles/Variables/Settings.box.scss';
-
 .response-component {
   display: flex;
   flex-direction: row;
@@ -9,9 +5,7 @@
   width: 100%;
   height: fit-content;
   background-color: none;
-  gap: $spacing-3x;
-  margin-bottom: $spacing-4x;
-  margin-top: $spacing-4x;
+  gap: 12px;
 }
 
 .response-logo-area {
@@ -23,8 +17,8 @@
 }
 
 .ai-icon {
-  width: $icon-size-32;
-  height: $icon-size-32;
+  width: 32px;
+  height: 32px;
   background: linear-gradient(93.19deg, #e5686c 0%, #6366f1 100%);
   border-radius: 50%;
   display: flex;
@@ -40,7 +34,7 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  gap: $spacing-3x;
+  gap: 12px;
   background-color: none;
 }
 .response-content-area {
@@ -51,34 +45,34 @@
   justify-content: flex-start;
   width: 684px;
   height: fit-content;
-  border-radius: $border-radius-xl;
-  padding: $spacing-4x;
-  background-color: $morning-fog-850;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: #f3f3f6;
   box-shadow:
     1px 1px 2px 0px #12121414,
-    1px 1px 2px 0px $universal-white inset;
-  gap: $spacing-4x;
+    1px 1px 2px 0px #ffffff inset;
+  gap: 16px;
 }
 
 .response-content-area-text {
-  font-size: $type-size-s;
+  font-size: 16px;
   text-wrap: wrap;
-  font-weight: $font-weight-regular;
-  line-height: $type-line-height-s;
-  color: $alias-type-primary;
+  font-weight: 400;
+  line-height: 24px;
+  color: #121214;
   max-width: 618px;
 }
 
 .response-content-area-visualization {
   width: 652px;
   height: fit-content;
-  background-color: $universal-white;
-  border-radius: $border-radius-xl;
+  background-color: #ffffff;
+  border-radius: 16px;
 }
 
 .response-interaction-row {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: $spacing-3x;
+  gap: 12px;
 }

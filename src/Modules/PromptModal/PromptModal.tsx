@@ -2,7 +2,6 @@ import styles from './PromptModal.module.scss';
 import AssistYou from '@/Components/AssistYou/AssistYou';
 import PageSizeButton from '@/Components/PageSizeButton/PageSizeButton';
 import CollapseIcon from '@/Assets/Icons/Collapse';
-import ExpandIcon from '@/Assets/Icons/Expand';
 import EgPromptCard from '@/Components/EgPromptCard/EgPromptCard';
 import PromptArea from '@/Components/PromptArea/PromptArea';
 import PromptedText from '@/Components/PromptedText/PromptedText';
@@ -75,7 +74,7 @@ export default function PromptModal({ onClose }: PromptModalProps) {
         onClick={e => e.stopPropagation()}
       >
         <div className={styles['modal-buttons']}>
-          <PageSizeButton icon={<ExpandIcon />} />
+          <PageSizeButton icon={<CollapseIcon />} />
           <PageSizeButton onClick={onClose} />
         </div>
         {!submittedPrompts.length && (

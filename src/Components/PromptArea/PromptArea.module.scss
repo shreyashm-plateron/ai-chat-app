@@ -1,15 +1,11 @@
-@import '../../Styles/Variables/Settings.colors.scss';
-@import '../../Styles/Variables/Settings.typo.scss';
-@import '../../Styles/Variables/Settings.box.scss';
-
 .promptAreaBox {
   width: 752px;
   min-height: 96px;
   box-sizing: border-box;
-  background-color: $universal-white;
-  border-radius: $border-radius-soft;
+  background-color: #ffffff;
+  border-radius: 24px;
   position: relative;
-  gap: $spacing-3x;
+  gap: 12px;
 
   // Outer gradient border using pseudo-element
   &::after {
@@ -35,7 +31,7 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    border-radius: $border-radius-soft; // Adjusted for the new border
+    border-radius: 24px; // Adjusted for the new border
     padding: 1px;
     background: linear-gradient(
       89.12deg,
@@ -43,12 +39,12 @@
       rgba(255, 255, 255, 0) 127.12%
     );
     mask:
-      linear-gradient($universal-white 0 0) content-box,
-      linear-gradient($universal-white 0 0);
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     mask-composite: exclude;
     -webkit-mask:
-      linear-gradient($universal-white 0 0) content-box,
-      linear-gradient($universal-white 0 0);
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
   }
 }
@@ -56,8 +52,8 @@
 .inputRow {
   display: flex;
   flex-direction: row;
-  padding: $spacing-4x $spacing-4x $spacing-6x $spacing-4x;
-  gap: $spacing-3x;
+  padding: 16px 16px 24px 16px;
+  gap: 12px;
 }
 
 .inputRowIcon {
@@ -71,13 +67,12 @@
 .contentEditable {
   width: 688px;
   min-height: 24px;
-  max-height: 250px;
   height: 24px;
   border: none;
   outline: none;
   resize: none;
   font-family: inherit;
-  font-size: $type-size-xs;
+  font-size: 14px;
   line-height: 1.5;
   background: transparent;
   overflow: visible;
@@ -89,16 +84,11 @@
   z-index: 1;
   word-wrap: break-word;
   white-space: pre-wrap;
-  transition:
-    height 0.2s ease,
-    overflow 0.2s ease;
-  overflow-wrap: break-word;
-  word-break: break-word;
 
   // Custom placeholder
   &:empty:before {
     content: attr(data-placeholder);
-    color: $alias-type-placeholder;
+    color: #999;
     pointer-events: none;
     position: absolute;
     top: 0;
@@ -122,39 +112,10 @@
   }
 }
 
-// Ellipsis indicator styles
-.ellipsisIndicator {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(90deg, transparent 0%, $universal-white 30%);
-  padding: 8px 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.ellipsisText {
-  font-size: 18px;
-  font-weight: bold;
-  color: $alias-type-placeholder;
-  line-height: 1;
-}
-
-.ellipsisHint {
-  font-size: 10px;
-  color: $alias-type-placeholder;
-  font-style: italic;
-  line-height: 1;
-}
-
 .promptAreaFooter {
   display: flex;
   flex-direction: row;
-  gap: $spacing-3x;
-  padding: 0px $spacing-3x $spacing-3x 0px;
+  gap: 12px;
+  padding: 0px 12px 12px 0px;
   justify-content: flex-end;
 }

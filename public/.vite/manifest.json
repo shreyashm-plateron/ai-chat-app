@@ -1,0 +1,12 @@
+{
+  "style.css": {
+    "file": "assets/pl-web-ai-chat.DExWDuhz.css",
+    "src": "style.css"
+  },
+  "wc/chat-bot.tsx": {
+    "file": "chat-bot.BlItN1hf.js",
+    "name": "chat-bot",
+    "src": "wc/chat-bot.tsx",
+    "isEntry": true
+  }
+}
