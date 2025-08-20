@@ -7,11 +7,16 @@ interface MarkdownRendererProps {
   className?: string;
 }
 
+interface MarkdownComponentProps {
+  children?: React.ReactNode;
+  [key: string]: any;
+}
+
 /**
  * Custom markdown components with consistent styling
  */
 const markdownComponents = {
-  h1: ({ node, ...props }: any) => (
+  h1: ({ ...props }: MarkdownComponentProps) => (
     <h1
       style={{
         fontSize: '24px',
@@ -24,7 +29,7 @@ const markdownComponents = {
     />
   ),
 
-  h2: ({ node, ...props }: any) => (
+  h2: ({ ...props }: MarkdownComponentProps) => (
     <h2
       style={{
         fontSize: '20px',
@@ -37,7 +42,7 @@ const markdownComponents = {
     />
   ),
 
-  h3: ({ node, ...props }: any) => (
+  h3: ({ ...props }: MarkdownComponentProps) => (
     <h3
       style={{
         fontSize: '18px',
@@ -50,7 +55,7 @@ const markdownComponents = {
     />
   ),
 
-  p: ({ node, ...props }: any) => (
+  p: ({ ...props }: MarkdownComponentProps) => (
     <p
       style={{
         marginBottom: '12px',
@@ -62,7 +67,7 @@ const markdownComponents = {
     />
   ),
 
-  ul: ({ node, ...props }: any) => (
+  ul: ({ ...props }: MarkdownComponentProps) => (
     <ul
       style={{
         marginBottom: '16px',
@@ -73,7 +78,7 @@ const markdownComponents = {
     />
   ),
 
-  li: ({ node, ...props }: any) => (
+  li: ({ ...props }: MarkdownComponentProps) => (
     <li
       style={{
         marginBottom: '8px',
@@ -84,7 +89,7 @@ const markdownComponents = {
     />
   ),
 
-  table: ({ node, ...props }: any) => (
+  table: ({ ...props }: MarkdownComponentProps) => (
     <table
       style={{
         width: '100%',
@@ -97,7 +102,7 @@ const markdownComponents = {
     />
   ),
 
-  th: ({ node, ...props }: any) => (
+  th: ({ ...props }: MarkdownComponentProps) => (
     <th
       style={{
         padding: '12px',
@@ -110,7 +115,7 @@ const markdownComponents = {
     />
   ),
 
-  td: ({ node, ...props }: any) => (
+  td: ({ ...props }: MarkdownComponentProps) => (
     <td
       style={{
         padding: '12px',
@@ -120,7 +125,7 @@ const markdownComponents = {
     />
   ),
 
-  code: ({ node, ...props }: any) => (
+  code: ({ ...props }: MarkdownComponentProps) => (
     <code
       style={{
         backgroundColor: '#f1f3f4',
@@ -133,7 +138,7 @@ const markdownComponents = {
     />
   ),
 
-  strong: ({ node, ...props }: any) => (
+  strong: ({ ...props }: MarkdownComponentProps) => (
     <strong
       style={{
         fontWeight: 'bold',
@@ -143,7 +148,7 @@ const markdownComponents = {
     />
   ),
 
-  blockquote: ({ node, ...props }: any) => (
+  blockquote: ({ ...props }: MarkdownComponentProps) => (
     <blockquote
       style={{
         borderLeft: '4px solid #667eea',
@@ -157,7 +162,7 @@ const markdownComponents = {
     />
   ),
 
-  hr: ({ node, ...props }: any) => (
+  hr: ({ ...props }: MarkdownComponentProps) => (
     <hr
       style={{
         border: 'none',
@@ -168,7 +173,7 @@ const markdownComponents = {
     />
   ),
 
-  a: ({ node, ...props }: any) => (
+  a: ({ ...props }: MarkdownComponentProps) => (
     <a
       style={{
         color: '#667eea',

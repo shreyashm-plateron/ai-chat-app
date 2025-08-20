@@ -26,7 +26,6 @@ class ScriptExecutor {
     try {
       // Check if we're executing for the same container with same content
       const contentHash = this.generateContentHash(htmlContent);
-      const containerId = this.getContainerId(containerElement);
 
       if (
         this.currentContainer === containerElement &&
@@ -127,7 +126,7 @@ class ScriptExecutor {
    * Load a single external script
    */
   private loadSingleExternalScript(scriptInfo: ScriptInfo): Promise<void> {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       if (!scriptInfo.src) {
         resolve();
         return;
@@ -180,7 +179,7 @@ class ScriptExecutor {
   ): { error?: string } {
     let lastError: string | undefined;
 
-    scripts.forEach((scriptInfo, index) => {
+    scripts.forEach((scriptInfo) => {
       try {
         // Create new script element to avoid conflicts
         const script = document.createElement('script');
@@ -192,15 +191,14 @@ class ScriptExecutor {
 
         // Wrap script content in a function to avoid variable conflicts
         const wrappedContent = this.wrapScriptContent(
-          scriptInfo.content,
-          index
+          scriptInfo.content
         );
         script.textContent = wrappedContent;
 
         // Append to container
         container.appendChild(script);
       } catch (error) {
-        lastError = `Script ${index + 1} execution failed: ${error instanceof Error ? error.message : 'Unknown error'}`;
+        lastError = `Script execution failed: ${error instanceof Error ? error.message : 'Unknown error'}`;
         console.error(lastError);
       }
     });
@@ -211,7 +209,7 @@ class ScriptExecutor {
   /**
    * Wrap script content to avoid variable conflicts
    */
-  private wrapScriptContent(content: string, index: number): string {
+  private wrapScriptContent(content: string): string {
     // If content is empty, return empty string
     if (!content.trim()) return '';
 
