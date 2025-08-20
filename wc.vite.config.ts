@@ -32,9 +32,9 @@ export default defineConfig({
       external: [],
       output: {
         inlineDynamicImports: true,
-        entryFileNames: () => "chat-bot.[hash].js",
         chunkFileNames: "chunks/[name].[hash].js",
-        assetFileNames: "assets/[name].[hash][extname]",
+       assetFileNames: `chat-bot.css`,
+         entryFileNames: `chat-bot.js`,
       },
     },
     sourcemap: false,
