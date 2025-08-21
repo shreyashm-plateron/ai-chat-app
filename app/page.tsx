@@ -19,11 +19,6 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {!isModalOpen && <AiChatbotSmallPrompt onClick={handleOpenModal} />}
-      {!isModalOpen && <AiChatbotSmallPrompt onClick={handleOpenModal} />}
-      <h1>Shreyash</h1>
-
-      {!isModalOpen && <AiChatbotSmallPrompt onClick={handleOpenModal} />}
-      {!isModalOpen && <AiChatbotSmallPrompt onClick={handleOpenModal} />}
       {isModalOpen && <PromptModal onClose={handleCloseModal} />}
      
     </div>
