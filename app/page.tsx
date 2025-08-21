@@ -8,6 +8,12 @@ import PromptModal from '../src/Modules/PromptModal/PromptModal';
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const authToken = localStorage.getItem('token');
+
+  if(!authToken) {
+    return <></>
+  }
+
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
