@@ -6,4 +6,8 @@
   gap: 10px;
   min-height: 100vh;
   padding-bottom: 20px;
+  position: fixed;
+  bottom: 0rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
