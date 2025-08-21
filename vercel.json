@@ -2,6 +2,9 @@
   "buildCommand": "npm run build:wc",
   "outputDirectory": "public",
   "framework": null,
+  "rewrites": [
+    { "source": "/", "destination": "/chat-bot.js" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
