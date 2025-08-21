@@ -30,7 +30,7 @@ export default defineConfig({
     manifest: true,
     rollupOptions: {
       external: [],
-      output:{
+      output: {
         inlineDynamicImports: true,
         chunkFileNames: "chunks/[name].[hash].js",
         assetFileNames: (assetInfo) => {
@@ -40,12 +40,11 @@ export default defineConfig({
           return 'assets/[name].[hash][extname]';
         },
         entryFileNames: 'chat-bot.js',
-      manualChunks: undefined,
-
       },
+      // Remove this line - it's not valid in rollupOptions
+      // manualChunks: undefined,
     },
     sourcemap: false,
-    emptyOutDir: false,
-   
+    emptyOutDir: true, // Changed to true to clean builds
   },
 }); 

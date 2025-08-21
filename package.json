@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "vite build --config wc.vite.config.ts",
+    "build": "npm run build:wc ",
     "start": "next start",
     "lint": "next lint",
     "build:wc": "vite build --config wc.vite.config.ts",
     "dev:wc": "vite build --watch --config wc.vite.config.ts",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "preview": "vite preview --port 8000 --host"
   },
   "dependencies": {
     "lottie-react": "^2.4.1",
