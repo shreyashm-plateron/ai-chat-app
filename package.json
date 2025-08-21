@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build:wc ",
+    "build": "npm run build:wc && npm run build:next",
     "start": "next start",
     "lint": "next lint",
     "build:wc": "vite build --config wc.vite.config.ts",
+    "build:next": "next build",
     "dev:wc": "vite build --watch --config wc.vite.config.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
