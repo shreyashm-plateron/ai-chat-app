@@ -8,7 +8,9 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://*.plateron.com",
+            value: process.env.NODE_ENV === 'development' 
+              ? "http://localhost:3000, https://*.plateron.com" 
+              : "https://*.plateron.com",
           },
           {
             key: "Access-Control-Allow-Methods",
