@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build:wc",
+    "build": "vite build --config wc.vite.config.ts",
     "start": "next start",
     "lint": "next lint",
     "build:wc": "vite build --config wc.vite.config.ts",
